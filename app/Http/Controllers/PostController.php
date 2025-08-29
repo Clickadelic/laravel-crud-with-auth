@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Http\StorePostRequest;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\StorePostRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -20,17 +22,43 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('posts.create');
     }
 
     /**
+     * Store a newly created director in storage.
+     *
+     * @param  \App\Http\Requests\StorePostRequest  $request
+     * @return \Illuminate\Http\RedirectResponse $response
+     */
+    public function store(StorePostRequest $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content'  => 'required|string',
+        ]);
+
+        // User-ID automatisch setzen
+        $post = Post::create([
+            'title'   => $validated['title'],
+            'content'    => $validated['content'],
+            'user_id' => Auth::id(), // hier kommt die User-ID rein
+        ]);
+
+        return redirect()->route('posts.index')->with('success', 'Post erfolgreich erstellt!');
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function update(StorePostRequest $request, Post $post): RedirectResponse
+    {   
+        $validated = $request->validated();
+        $post->update($validated);
+        return redirect()->route('posts.index')
+                         ->with('success', 'Post wurde aktualisiert!');
     }
 
     /**
@@ -52,27 +80,16 @@ class PostController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     */
-    // public function update(StorePostRequest $request, Post $post): RedirectResponse
-    // {   
-    //     $validated = $request->validated();
-    //     $post->update($validated);
-    //     return redirect()->route('posts.index')
-    //                      ->with('success', 'Direktor wurde aktualisiert!');
-    // }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Post $post)
     {
         try {
             $post->delete();
-            return redirect()->route('post.index')->with('success', 'post wurde gelöscht.');
+            return redirect()->route('posts.index')->with('success', 'Post wurde gelöscht.');
             // Wir beschreiben den auftretenden Fehler mit der entsprechenden Fehlerklasse in PHP als Typ der Übergabe der Variab $e.
         } catch (\Illuminate\Database\QueryException $e) {
-            return redirect()->route('post.index')->with('error', 'Dieser Post kann nicht gelöscht werden');
+            return redirect()->route('posts.index')->with('error', 'Dieser Post kann nicht gelöscht werden');
         }
     }
 }

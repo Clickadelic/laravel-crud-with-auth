@@ -20,7 +20,7 @@ Route::prefix('posts')->group(function () {
     Route::delete('/{posts}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 
-// Posts
+// Users
 Route::prefix('users')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('users.index');
     Route::get('/create', [UserController::class, 'create'])->name('users.create');
