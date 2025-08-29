@@ -14,11 +14,12 @@ Route::prefix('posts')->group(function () {
     Route::get('/', [PostController::class, 'index'])->name('posts.index');
     Route::get('/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('/', [PostController::class, 'store'])->name('posts.store');
-    Route::get('/{posts}', [PostController::class, 'show'])->name('posts.show');
-    Route::get('/{posts}/edit', [PostController::class, 'edit'])->name('posts.edit');
-    Route::put('/{posts}', [PostController::class, 'update'])->name('posts.update');
-    Route::delete('/{posts}', [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
+    Route::get('/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::put('/{post}', [PostController::class, 'update'])->name('posts.update');
+    Route::delete('/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
+
 
 // Users
 Route::prefix('users')->group(function () {

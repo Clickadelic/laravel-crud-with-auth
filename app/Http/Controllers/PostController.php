@@ -35,20 +35,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'content'  => 'required|string',
-        ]);
+        $validated = $request->validated();
 
-        // User-ID automatisch setzen
         $post = Post::create([
             'title'   => $validated['title'],
-            'content'    => $validated['content'],
-            'user_id' => Auth::id(), // hier kommt die User-ID rein
+            'content' => $validated['content'],
+            'user_id' => Auth::id(),
         ]);
 
         return redirect()->route('posts.index')->with('success', 'Post erfolgreich erstellt!');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -56,28 +53,34 @@ class PostController extends Controller
     public function update(StorePostRequest $request, Post $post): RedirectResponse
     {   
         $validated = $request->validated();
+
+        // user_id nicht überschreiben lassen
+        unset($validated['user_id']);
+
         $post->update($validated);
+
         return redirect()->route('posts.index')
-                         ->with('success', 'Post wurde aktualisiert!');
+                        ->with('success', 'Post wurde aktualisiert!');
     }
+
 
     /**
      * Display the specified resource.
      */
     public function show(Post $post)
     {
-        $post = Post::find($post->id);
         return view('posts.show', compact('post'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {   
-        $post = Post::find($id);
+    public function edit(Post $post)
+    {
         return view('posts.edit', compact('post'));
     }
+
 
     /**
      * Remove the specified resource from storage.
