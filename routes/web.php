@@ -31,12 +31,6 @@ Route::prefix('users')->group(function () {
     Route::delete('/{users}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
-
-
-
-
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
