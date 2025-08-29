@@ -1,11 +1,13 @@
-@props(
-    // Set the default value to null, no Post data in the form
-    ['post' => null]
-)
+
 <form class="flex flex-col space-y-4 justify-between items-center" method="POST" action="{{ route('posts.store') }}">
     @csrf
     @if(isset($post))
         @method('PUT')
+    @endif
+    @if (session('success'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+            {{ session('success') }}
+        </div>
     @endif
     <div class="w-full space-y-2">
         <x-input-label for="title" :value="__('Titel')" />

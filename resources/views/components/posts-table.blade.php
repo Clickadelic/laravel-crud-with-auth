@@ -40,13 +40,6 @@
             </tr>
         @endforelse
     </tbody>
-    <tfoot>
-        <tr class="text-center">
-            <td colspan="5">
-                <p class="pt-4 text-sm">Posts gesamt: {{ $posts->count() }}</p>
-            </td>  
-        </tr>
-    </tfoot>
 </table>
 
     
