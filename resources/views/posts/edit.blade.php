@@ -4,7 +4,11 @@
             {{ __('Edit Posts') }}
         </h2>
     </x-slot>
-
+    {{-- @php
+        echo '<pre class="text-sm text-gray-600 dark:text-gray-400">';
+        var_dump($post);
+        echo '</pre>';
+    @endphp --}}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">

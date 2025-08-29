@@ -7,7 +7,7 @@
             <th class="py-2 text-left">Content</th>
             <th class="py-2 text-left">von</th>
             <th class="py-2 text-left">Erstellt am</th>
-            <th class="py-2 text-left">Aktion</th>
+            <th class="py-2 text-right pr-4">Aktion</th>
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">

@@ -11,7 +11,7 @@
     @endif
     <div class="w-full space-y-2">
         <x-input-label for="title" :value="__('Titel')" />
-        <x-text-input name="title" id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title' ?? null)" placeholder="Titel des Posts" required autofocus autocomplete="title" />
+        <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title' ?? null)" placeholder="Titel des Posts" required autofocus autocomplete="title" />
         <x-input-error :messages="$errors->get('title')" />
         {{-- Test Error --}}
         @if($errors->any())

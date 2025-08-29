@@ -28,7 +28,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
                 {{ $slot }}
             </main>
         </div>

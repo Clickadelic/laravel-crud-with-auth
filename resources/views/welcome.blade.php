@@ -56,9 +56,8 @@
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Laravel has an incredibly rich ecosystem. <br>We suggest starting with the following.</p>
                     <h2>Laravel Documentation</h2>
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Laravel's documentation is a great place to start learning the language and framework.</p>
-                    <x-button>Documentation</x-button>
+                    <x-link-button href="https://laravel.com/docs" variant="indigo" target="_blank">Documentation</x-button>
                 </div>
-
             </main>
         </div>
 
