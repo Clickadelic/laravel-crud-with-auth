@@ -10,9 +10,8 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     @php
-                        $user = auth()->user();
-                        $user_id = $user->id;
-                        var_dump($user_id);
+                        // PHP here
+                        
                     @endphp
                     <form class="flex flex-col space-y-4 justify-between items-center" method="POST" action="{{ route('posts.store') }}">
                         @csrf
@@ -26,7 +25,7 @@
                         </div>
                         <div class="w-full space-y-2">
                             <x-input-label for="content" :value="__('Content')" />
-                            <x-textarea id="content" rows="5" class="block mt-1 w-full" type="text" name="content" :value="old('content' ?? null)" placeholder="Es war einmal" required autofocus autocomplete="content" />
+                            <x-textarea id="content" rows="5" class="block mt-1 w-full" type="text" name="content" :value="old('content' ?? null)" placeholder="Es war einmal..." required autofocus autocomplete="content" />
                             <x-input-error :messages="$errors->get('content')" />
                         </div>
                         <x-button class="w-full" variant="indigo">{{ $update ?? false ? 'Aktualisieren' : 'Erstellen' }}</x-button>
