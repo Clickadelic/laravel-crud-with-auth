@@ -3,19 +3,19 @@
 <table class="w-full text-md bg-white text-gray-800 dark:text-gray-300 dark:bg-gray-800 rounded-lg">
     <thead>
         <tr>
-            <th class="text-left">Titel</th>
-            <th class="text-left">von</th>
-            <th class="text-left">Erstellt am</th>
-            <th class="text-left">Aktion</th>
+            <th class="py-2 text-left">Titel</th>
+            <th class="py-2 text-left">von</th>
+            <th class="py-2 text-left">Erstellt am</th>
+            <th class="py-2 text-left">Aktion</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
         @forelse($posts as $post)
             <tr>
-                <td class="text-left">{{ $post->name }}</td>
-                <td class="text-left">{{ $post->user_id->name }}</td>
-                <td class="text-left">{{ $post->created_at }}</td>
-                <td class="text-right">
+                <td class="py-2 text-left">{{ $post->name }}</td>
+                <td class="py-2 text-left">{{ $post->user_id->name }}</td>
+                <td class="py-2 text-left">{{ $post->created_at }}</td>
+                <td class="py-2 text-right">
                     <x-button variant="ghost" size="sm">
                         {{ __('Bearbeiten') }}
                     </x-button>
@@ -23,10 +23,10 @@
                         {{ __('Löschen') }}
                     </x-button>
                 </td>
-            </tr>
+            </tr> 
         @empty
             <tr>
-                <td colspan="4" class="text-center">Keine Posts gefunden.</td>
+                <td colspan="4" class="text-center text-xs">Keine Posts gefunden.</td>
             </tr>
         @endforelse
     </tbody>
