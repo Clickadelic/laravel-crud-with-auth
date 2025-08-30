@@ -3,7 +3,7 @@
 <table class="table-auto border-collapse w-full text-md bg-white text-gray-800 dark:text-gray-300 dark:bg-gray-800 rounded-lg">
     <thead>
         <tr>
-            <th class="w-[70px] p-1 text-left invisible sm:visible">Post ID</th>
+            <th class="w-[70px] p-1 text-left invisible sm:visible">Post-Id</th>
             <th class="w-[130px] p-1 text-left invisible sm:visible">User</th>
             <th class="w-[150px] p-1 text-left">Titel</th>
             <th class="p-1 text-left invisible sm:visible">Content</th>
