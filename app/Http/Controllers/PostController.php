@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Route = /posts - GET Request - zeige alle Posts.
      */
     public function index()
     {
@@ -20,12 +20,16 @@ class PostController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Route = /posts/create - GET Request - zeige ein Formular zum Erstellen von Posts.
      */
     public function create(Request $request)
     {
         return view('posts.create');
     }
+
+    /**
+     * Route = /posts - POST Request zum annehmen der Formulardaten mit StorePostRequest (also typ-sicherem Request)
+     */
 
     /**
      * Store a newly created director in storage.
