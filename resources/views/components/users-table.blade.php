@@ -7,7 +7,7 @@
     @endphp
 </div> --}}
 <div class="w-full overflow-x-auto flex flex-row">
-    <table class="table w-auto text-md bg-white text-gray-800 dark:text-gray-300 dark:bg-gray-800 rounded-lg">
+    <table class="table w-full text-md bg-white text-gray-800 dark:text-gray-300 dark:bg-gray-800 rounded-lg">
         <thead>
             <tr>
                 <th class="py-2 text-left">Id</th>

@@ -8,7 +8,7 @@
             <th class="w-[150px] p-1 text-left">Titel</th>
             <th class="p-1 text-left invisible sm:visible">Content</th>
             <th class="w-[190px] p-1 text-left invisible sm:visible">Erstellt am</th>
-            <th class="p-1 text-right pr-4">Aktion</th>
+            <th class="p-1 text-left pr-4">Aktion</th>
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -19,7 +19,7 @@
                 <td class="w-[150px] p-1 text-left">{{ $post->title }}</td>
                 <td class="p-1 text-left invisible sm:visible line-clamp-1">{{ $post->content }}</td>
                 <td class="w-[190px] p-1 text-left invisible sm:visible">{{ $post->created_at->format('d.m.Y H:i') }} Uhr</td>
-                <td class="p-1 text-right flex flex-row justify-end items-end gap-2">
+                <td class="p-1 text-left flex flex-row justify-end items-end gap-2">
                     <x-link-button href="{{ route('posts.show', $post) }}" variant="ghost" size="sm" title="{{ __('Ansehen') }}" class="hover:text-indigo-500 dark:hover:text-indigo-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
