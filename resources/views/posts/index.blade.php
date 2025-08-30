@@ -14,11 +14,13 @@
                         {{ __('Neuer Post') }}
                     </x-link-button>
                 </div>
-                @if (session('success'))
-                    <div class="w-full bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
-                        {{ session('success') }}
-                    </div>
-                @endif
+                <div class="flex flex-row justify-between px-5 text-gray-900 dark:text-gray-100">
+                    @if (session('success'))
+                        <div class="w-full bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                </div>
                 <div class="flex flex-row justify-between p-6 text-gray-900 dark:text-gray-100">
                     <x-posts-table :posts="$posts" />
                 </div>

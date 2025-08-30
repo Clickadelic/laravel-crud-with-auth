@@ -16,7 +16,7 @@
         'warning'   => "text-white bg-amber-600 hover:bg-amber-700 $baseFocus focus:ring-amber-600",
         'success'   => "text-white bg-emerald-600 hover:bg-emerald-700 $baseFocus focus:ring-emerald-600",
         'default'   => "bg-neutral-700 hover:bg-neutral-800 $baseFocus focus:ring-neutral-500",
-        'ghost'     => "bg-transparent hover:bg-neutral-700 border border-neutral-500 hover:text-slate-100 $baseFocus focus:ring-neutral-500",
+        'ghost'     => "bg-transparent $baseFocus focus:ring-neutral-500",
         'red'       => "text-white bg-red-600 hover:bg-red-700 $baseFocus focus:ring-red-600",
         'green'     => "text-white bg-green-600 hover:bg-green-700 $baseFocus focus:ring-green-600",
         'blue'      => "text-white bg-blue-600 hover:bg-blue-700 $baseFocus focus:ring-blue-600",
@@ -47,12 +47,12 @@
 
 <a href="{{ $attributes->get('href') }}"  {{ $attributes->merge([
     'class' => implode(' ', [
-        'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm font-medium transition-colors',
+        'inline-flex gap-1 items-center justify-center gap-2 whitespace-nowrap rounded-sm font-medium transition-colors',
         'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
         'disabled:pointer-events-none disabled:opacity-50',
         '[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
         'focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2',
-        'hover:cursor-pointer shadow-sm',
+        'hover:cursor-pointer',
         $sizeClasses,
         $uppercaseClass,
         $variantClasses

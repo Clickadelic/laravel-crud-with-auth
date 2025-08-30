@@ -46,7 +46,6 @@ class PostController extends Controller
         return redirect()->route('posts.index')->with('success', 'Post erfolgreich erstellt!');
     }
 
-
     /**
      * Store a newly created resource in storage.
      */
@@ -54,15 +53,13 @@ class PostController extends Controller
     {   
         $validated = $request->validated();
 
-        // user_id nicht überschreiben lassen
+        // Beim Update user_id nicht überschreiben lassen
         unset($validated['user_id']);
 
         $post->update($validated);
 
-        return redirect()->route('posts.index')
-                        ->with('success', 'Post wurde aktualisiert!');
+        return redirect()->route('posts.index')->with('success', 'Post wurde aktualisiert!');
     }
-
 
     /**
      * Display the specified resource.
@@ -72,7 +69,6 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -80,7 +76,6 @@ class PostController extends Controller
     {
         return view('posts.edit', compact('post'));
     }
-
 
     /**
      * Remove the specified resource from storage.
@@ -90,7 +85,7 @@ class PostController extends Controller
         try {
             $post->delete();
             return redirect()->route('posts.index')->with('success', 'Post wurde gelöscht.');
-            // Wir beschreiben den auftretenden Fehler mit der entsprechenden Fehlerklasse in PHP als Typ der Übergabe der Variab $e.
+            // Wir beschreiben den auftretenden Fehler mit der entsprechenden Fehlerklasse in PHP als Typ der Übergabe der Variable $e.
         } catch (\Illuminate\Database\QueryException $e) {
             return redirect()->route('posts.index')->with('error', 'Dieser Post kann nicht gelöscht werden');
         }
