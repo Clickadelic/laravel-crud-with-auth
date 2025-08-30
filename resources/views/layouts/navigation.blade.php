@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     {{-- Check ob wir auf "/posts" sind oder "/posts/create" oder "/posts/{id}/edit"--}}
-                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index') || request()->routeIs('posts.create') || request()->routeIs('posts.edit')">
+                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index') || request()->routeIs('posts.create') || request()->routeIs('posts.edit') || request()->routeIs('posts.show')">
                         {{ __('Posts') }}
                     </x-nav-link>
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">

@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex flex-row justify-between p-6 text-gray-900 dark:text-gray-100">
-                    <h3>{{ __("Alle Posts im Überblick") }}</h3>
+                    <h3 class="mt-[3px]">{{ __("Alle Posts im Überblick") }}</h3>
                     <x-link-button size="sm" variant="indigo" :href="route('posts.create')" :active="request()->routeIs('posts.create')">
                         {{ __('Neuer Post') }}
                     </x-link-button>

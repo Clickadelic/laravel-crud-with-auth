@@ -27,7 +27,7 @@
                     <td class="text-left">{{ $user->email }}</td>
                     <td class="text-left">{{ $user->created_at->format('d.m.Y H:i') }} Uhr</td>
                     <td class="text-left">
-                        {{ $user->email_verified_at ? '✓' : '✘' }}
+                        {{ $user->email_verified_at ? '✅' : '❌' }}
                     </td>
                 </tr>
             @empty

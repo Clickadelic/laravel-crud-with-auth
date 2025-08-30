@@ -59,7 +59,7 @@
                     <x-link-button href="https://laravel.com/docs" variant="indigo" target="_blank">Documentation</x-button>
                 </div>
             </main>
-        </div>
+        </div> 
 
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
