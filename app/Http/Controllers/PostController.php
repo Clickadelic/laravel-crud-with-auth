@@ -51,6 +51,10 @@ class PostController extends Controller
     }
 
     /**
+     * Route = /posts/{id} - GET Request zum anzeigen eines einzelnen Posts
+     */
+
+    /**
      * Display the specified resource.
      */
     public function show(Post $post)
